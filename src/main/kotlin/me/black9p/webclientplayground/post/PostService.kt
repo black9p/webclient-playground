@@ -16,7 +16,7 @@ class PostService {
             .build()
 
         return webClient.get()
-            .uri("/posts/1")
+            .uri("/posts/{id}", id)
             .retrieve()
             .bodyToMono(Post::class.java)
     }
